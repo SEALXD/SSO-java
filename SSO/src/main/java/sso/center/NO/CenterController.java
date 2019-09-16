@@ -1,4 +1,4 @@
-package sso.center;
+package sso.center.NO;
 
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
