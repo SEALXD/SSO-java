@@ -6,8 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 public class Logincheck {
     static String COOKIE_KEY = "token";
     static String COOKIE_VAL = "token";
+
     /**
      * 校验cookie
+     *
      * @param request
      * @return
      */

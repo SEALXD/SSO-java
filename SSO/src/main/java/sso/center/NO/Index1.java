@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 public class Index1 {
 
     @RequestMapping("/sys1")
-    public String login1(HttpServletRequest request){
+    public String login1(HttpServletRequest request) {
         return Logincheck.checkCookie(request) ? "success" : "indexPage";
     }
 }

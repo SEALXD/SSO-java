@@ -26,7 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .authorizeRequests()
 
-                .antMatchers("/user**","/oauth/check_token**")
+                .antMatchers("/user**", "/oauth/check_token**")
 
                 .permitAll()
 
@@ -37,6 +37,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
 
                 .formLogin().permitAll();
+
+//        OpenIdAuthenticationFilter openIdAuthenticationFilter = new OpenIdAuthenticationFilter();
+//        //此处可以添加认证处理对象
+//        openIdAuthenticationFilter.setAuthenticationManager(null);
+//        openIdAuthenticationFilter.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/login", "POST"));
+//        http.addFilter(openIdAuthenticationFilter);
 
     }
 

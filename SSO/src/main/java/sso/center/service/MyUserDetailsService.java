@@ -18,7 +18,7 @@ public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String arg0) throws UsernameNotFoundException {
         // TODO Auto-generated method stub
-        if("admin".equals(arg0)){
+        if ("admin".equals(arg0)) {
             User user = createUser();
             return user;
         }

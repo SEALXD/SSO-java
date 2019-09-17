@@ -21,7 +21,7 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     private TokenStore tokenStore;
 
     @Override
-    public void configure(ClientDetailsServiceConfigurer clients) throws Exception{
+    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory().withClient("client")
                 .secret("111111")
                 .resourceIds("oauth")
@@ -31,6 +31,7 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
                 .autoApprove(true);
 
     }
+
     /*
                 .secret("111111")
                 .resourceIds("oauth")
@@ -48,12 +49,12 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
 
 
     @Override
-    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception{
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints.tokenStore(tokenStore);
     }
 
     @Bean
-    public TokenStore tokenStore(){
+    public TokenStore tokenStore() {
         //这里为了简单达到目的，直接使用内存存储Token和用户信息。
         return new InMemoryTokenStore();
     }

@@ -13,7 +13,7 @@ public class Index2 {
 //    }
 
     @RequestMapping("/sys2")
-    public String login2(HttpServletRequest request){
+    public String login2(HttpServletRequest request) {
         return Logincheck.checkCookie(request) ? "success" : "indexPage";
     }
 }

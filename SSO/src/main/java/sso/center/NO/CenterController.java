@@ -16,21 +16,22 @@ public class CenterController {
 
     /**
      * 登录，如果成功就创建token保存在cookie中
+     *
      * @param request
      */
     @RequestMapping("/login")
-    public String login(HttpServletRequest request, HttpServletResponse response){
+    public String login(HttpServletRequest request, HttpServletResponse response) {
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
-        System.out.println(userName+" "+password);
-        if(check(userName,password)){
+        System.out.println(userName + " " + password);
+        if (check(userName, password)) {
             System.out.println("!!!");
-            Cookie cookie = new Cookie("token","token");
+            Cookie cookie = new Cookie("token", "token");
             cookie.setPath("/"); //使该cookie在同一服务器的应用之间共享
             //cookie.setDomain(".xxx");//跨域共享
             response.addCookie(cookie);
             return "success";
-        }else{
+        } else {
             return "fail";
         }
 
@@ -40,10 +41,10 @@ public class CenterController {
     /**
      * 检测用户名密码
      */
-    public boolean check(String userName, String password){
-        if(userName.equals(uName) && password.equals(pw)){
+    public boolean check(String userName, String password) {
+        if (userName.equals(uName) && password.equals(pw)) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
